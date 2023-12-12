@@ -45,3 +45,7 @@ docker run -itd \
       --db=ny_taxi \
       --table_name=ytx \
       --url=${URL}
+
+# stop and kill all containers
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -f status=exited -q)
